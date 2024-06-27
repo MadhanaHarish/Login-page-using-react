@@ -1,0 +1,9 @@
+body {
+  background-color: white;
+}
+
+#navbarNav{
+  display: flex;
+  align-items: center;
+  justify-content: right;
+}
