@@ -1,33 +1,39 @@
 import React from 'react';
-import './Login.css'
+import './Login.css';
 
 const LoginPage = () => {
     return (
-        <div className="row g-0 w-100 background-image">
-            <div className="col-6">
-                <img src={"https://thehill.com/wp-content/uploads/sites/2/2023/08/students-studying_081823adobe-stock_women-college-stress.jpg?w=1280&h=720&crop=1"} style={{height: '92vh'}} className="col-12 p-5"/>
+        <div className="container-fluid row g-0 w-100 background-image">
+            <div className="col-lg-6 d-flex justify-content-start align-items-center vh-lg-100">
+                <div className="container px-lg-5">
+                    <h1 className="text-success">Cooking Blog</h1>
+                    <h5 className="pt-2">“Good food is very often, even most often, simple food.”</h5>
+                </div>
             </div>
-            <div className="col-6 d-flex flex-row justify-content-end">
-                <div className="container d-flex justify-content-center align-items-center pt-5"
-                     style={{height: '92vh'}}>
-                    <div className="card p-4 w-100" style={{maxWidth: '400px'}}>
+
+            <div className="col-lg-6 d-lg-flex justify-content-end">
+                <div className="container d-flex justify-content-center align-items-center vh-lg-100">
+                    <div className="card p-4 w-100" style={{ maxWidth: '400px' }}>
                         <form>
-                            <h5 className="text-center mb-4">Sign in</h5>
+                            <h5 className="text-center mb-4">Log in</h5>
                             <div className="mb-3">
-                                <input type="email" className="form-control" placeholder="Enter your email"/>
+                                <input type="email" className="form-control" placeholder="Enter your email" />
                             </div>
                             <div className="mb-3">
-                                <input type="password" className="form-control" placeholder="Enter your password"/>
+                                <input type="password" className="form-control" placeholder="Enter your password" />
                             </div>
-                            <div className="d-grid">
-                                <input type="submit" value={"Login"} className="btn btn-success"/>
+                            <div className="d-grid mb-3">
+                                <input type="submit" value="Log in" className="btn btn-success" />
+                            </div>
+                            <hr className="hr-text" data-content="or" />
+                            <div>
+                                <p className="text-center">Click here to <a href="#">Sign up</a></p>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-
     );
 };
 

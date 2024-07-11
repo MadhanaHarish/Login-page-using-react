@@ -2,4 +2,42 @@
     background-image: url("https://static3.depositphotos.com/1003473/160/i/450/depositphotos_1601892-stock-photo-blue-wavy-background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+}
+
+@media (min-width: 992px) {
+    .container1 {
+        padding-left: 10rem;
+        padding-right: 2rem;
+    }
+}
+
+.hr-text {
+    line-height: 1em;
+    position: relative;
+    outline: 0;
+    border: 0;
+    color: black;
+    text-align: center;
+    height: 1.5em;
+}
+
+.hr-text:before {
+    content: '';
+    background: black;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 100%;
+    height: 1px;
+}
+
+.hr-text:after {
+    content: attr(data-content);
+    position: relative;
+    display: inline-block;
+    color: #000000;
+    padding: 0 0.5em;
+    line-height: 1.5em;
+    background-color: #fcfcfa;
 }

@@ -9,13 +9,6 @@ import Login from './Login.jsx'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
     <React.StrictMode>
-        <Router>
-            <Navbar/>
-            <Routes>
-                <Route path="/" element={<App/>}/>
-                <Route path="/about" element={<App/>}/>
-                <Route path="/Login" element={<Login/>}/>
-            </Routes>
-        </Router>
+        <Login/>
     </React.StrictMode>,
 )
