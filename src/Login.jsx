@@ -1,7 +1,15 @@
 import React from 'react';
 import './Login.css';
+import {useNavigate} from 'react-router-dom';
 
-const LoginPage = () => {
+const Login = () => {
+    const navigate = useNavigate();
+
+    const handleLogin = (event) => {
+        event.preventDefault();
+        navigate('/homepage');
+    };
+
     return (
         <div className="container-fluid row g-0 w-100 background-image">
             <div className="col-lg-6 d-flex justify-content-start align-items-center vh-lg-100">
@@ -14,7 +22,7 @@ const LoginPage = () => {
             <div className="col-lg-6 d-lg-flex justify-content-end">
                 <div className="container d-flex justify-content-center align-items-center vh-lg-100">
                     <div className="card p-4 w-100" style={{ maxWidth: '400px' }}>
-                        <form>
+                        <form onSubmit={handleLogin}>
                             <h5 className="text-center mb-4">Log in</h5>
                             <div className="mb-3">
                                 <input type="email" className="form-control" placeholder="Enter your email" />
@@ -27,7 +35,7 @@ const LoginPage = () => {
                             </div>
                             <hr className="hr-text" data-content="or" />
                             <div>
-                                <p className="text-center">Click here to <a href="#">Sign up</a></p>
+                                <p className="text-center">Click here to <a href="/signup">Sign up</a></p>
                             </div>
                         </form>
                     </div>
@@ -37,4 +45,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default Login;
