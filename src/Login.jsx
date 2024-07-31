@@ -1,13 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Login.css';
-import {useNavigate} from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const navigate = useNavigate();
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [errors, setErrors] = useState({});
+
+    const validate = () => {
+        const errors = {};
+        if (!email) {
+            errors.email = 'Email is required';
+        } else if (!/\S+@\S+\.\S+/.test(email)) {
+            errors.email = 'Email is invalid';
+        }
+        if (!password) {
+            errors.password = 'Password is required';
+        } else if (password.length < 6) {
+            errors.password = 'Password must be at least 6 characters long';
+        }
+        return errors;
+    };
 
     const handleLogin = (event) => {
         event.preventDefault();
-        navigate('/homepage');
+        const validationErrors = validate();
+        if (Object.keys(validationErrors).length > 0) {
+            setErrors(validationErrors);
+        } else {
+            setErrors({});
+            navigate('/homepage');
+        }
     };
 
     return (
@@ -25,10 +49,24 @@ const Login = () => {
                         <form onSubmit={handleLogin}>
                             <h5 className="text-center mb-4">Log in</h5>
                             <div className="mb-3">
-                                <input type="email" className="form-control" placeholder="Enter your email" />
+                                <input
+                                    type="email"
+                                    className={`form-control ${errors.email ? 'is-invalid' : ''}`}
+                                    placeholder="Enter your email"
+                                    value={email}
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                                {errors.email && <div className="invalid-feedback">{errors.email}</div>}
                             </div>
                             <div className="mb-3">
-                                <input type="password" className="form-control" placeholder="Enter your password" />
+                                <input
+                                    type="password"
+                                    className={`form-control ${errors.password ? 'is-invalid' : ''}`}
+                                    placeholder="Enter your password"
+                                    value={password}
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                                {errors.password && <div className="invalid-feedback">{errors.password}</div>}
                             </div>
                             <div className="d-grid mb-3">
                                 <input type="submit" value="Log in" className="btn btn-success" />

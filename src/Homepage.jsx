@@ -1,16 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import './Homepage.css'
 
 const Homepage = () => {
     return (
         <>
             <nav className="navbar navbar-expand-lg navbar-light bg-light custom-navbar p-3">
-                <a className="navbar-brand" href="#">Cooking blog</a>
-                <button className="navbar-toggler" type="button" data-toggle="collapse"
-                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                <a className="navbar-brand" href="#">Cooking Blog</a>
+                <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
+                    <span className="navbar-toggler-icon" style={{color: '#ff8800'}}></span>
                 </button>
 
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
@@ -19,7 +18,7 @@ const Homepage = () => {
                             <a className="nav-link" href="#">Home</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="#">Your recipies</a>
+                            <a className="nav-link" href="#">Your Recipes</a>
                         </li>
                     </ul>
                 </div>
